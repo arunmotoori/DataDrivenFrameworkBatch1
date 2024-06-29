@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="2" failed="0" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-29T21:00:23 IST" name="Default suite" finished-at="2024-06-29T21:00:54 IST" duration-ms="31074">
+    <groups>
+    </groups>
+    <test started-at="2024-06-29T21:00:23 IST" name="Default test" finished-at="2024-06-29T21:00:54 IST" duration-ms="31074">
+      <class name="tests.Login">
+        <test-method signature="verifyLoginFunctionality(java.util.HashMap)[pri:0, instance:tests.Login@7b2bbc3]" started-at="2024-06-29T21:00:26 IST" name="verifyLoginFunctionality" data-provider="dataSupplierOne" finished-at="2024-06-29T21:00:41 IST" duration-ms="14954" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@7b2bbc3]" started-at="2024-06-29T21:00:41 IST" name="tearDown" finished-at="2024-06-29T21:00:42 IST" duration-ms="1150" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyLoginFunctionality(java.util.HashMap)[pri:0, instance:tests.Login@7b2bbc3]" started-at="2024-06-29T21:00:42 IST" name="verifyLoginFunctionality" data-provider="dataSupplierOne" finished-at="2024-06-29T21:00:42 IST" duration-ms="7" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=N, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Run mode is set to N in excel file, hence not executed]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Run mode is set to N in excel file, hence not executed
+at tests.Login.verifyLoginFunctionality(Login.java:37)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@7b2bbc3]" started-at="2024-06-29T21:00:42 IST" name="tearDown" finished-at="2024-06-29T21:00:42 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyLoginFunctionality(java.util.HashMap)[pri:0, instance:tests.Login@7b2bbc3]" started-at="2024-06-29T21:00:42 IST" name="verifyLoginFunctionality" data-provider="dataSupplierOne" finished-at="2024-06-29T21:00:54 IST" duration-ms="11270" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@7b2bbc3]" started-at="2024-06-29T21:00:54 IST" name="tearDown" finished-at="2024-06-29T21:00:54 IST" duration-ms="656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
