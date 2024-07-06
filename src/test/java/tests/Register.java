@@ -16,13 +16,15 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import base.Base;
 import util.DataUtil;
 import util.MyXLSReader;
 
-public class Register {
+public class Register extends Base {
 	
 	WebDriver driver;
 	MyXLSReader myXLSReader = null;
@@ -35,6 +37,7 @@ public class Register {
 		
 	}
 	
+	
 	@Test(dataProvider="registerDataProvider")
 	public void verifyRegisterFunctionality(HashMap<String,String> hmap) {
 		
@@ -42,24 +45,9 @@ public class Register {
 			throw new SkipException("Run mode is set N, hence test got skipped");
 		}
 		
-		String browserName = hmap.get("Browser");
+	
+		driver = openBrowserAndApplication(hmap.get("Browser"));
 		
-		if(browserName.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
-		}else if(browserName.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		}else if(browserName.equalsIgnoreCase("edge")) {
-			driver = new EdgeDriver();
-		}else if(browserName.equalsIgnoreCase("ie")) {
-			driver = new InternetExplorerDriver();
-		}else if(browserName.equalsIgnoreCase("safari")) {
-			driver = new SafariDriver();
-		}
-		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-		driver.get("https://tutorialsninja.com/demo");
 		WebElement myAccountDropMenu = driver.findElement(By.xpath("//span[text()='My Account']"));
 		myAccountDropMenu.click();
 		WebElement registerOption = driver.findElement(By.linkText("Register"));
@@ -99,7 +87,8 @@ public class Register {
 	@DataProvider(name="registerDataProvider")
 	public Object[][] registerDataSupplierMethod() {
 		
-		String excelPath = System.getProperty("user.dir")+"\\src\\test\\resources\\TutorialsNinja.xlsx";
+		loadPropertiesFile();
+		String excelPath = System.getProperty("user.dir")+prop.getProperty("excelfilepath");
 		
 		try {
 			myXLSReader = new MyXLSReader(excelPath);
@@ -121,11 +110,5 @@ public class Register {
 		
 	}
 	
-	public String generateEmailWithTimeStamp() {
-		
-		Date date = new Date();
-		return date.toString().replace(" ","_").replace(":","_")+"@gmail.com";
-		
-	}
 
 }

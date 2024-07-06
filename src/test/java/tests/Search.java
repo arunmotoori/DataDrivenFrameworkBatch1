@@ -15,13 +15,15 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import base.Base;
 import util.DataUtil;
 import util.MyXLSReader;
 
-public class Search {
+public class Search extends Base {
 	
 	WebDriver driver;
 	MyXLSReader excelReader = null;
@@ -33,6 +35,7 @@ public class Search {
 			driver.quit();
 	}
 	
+	
 	@Test(dataProvider="searchDataProvider")
 	public void verifySearchFunctionality(HashMap<String,String> hmap) {
 		
@@ -40,25 +43,8 @@ public class Search {
 			throw new SkipException("Runmode is set to N, hence test got skipped");
 		}
 		
-		String browserName = hmap.get("Browser");
+		driver = openBrowserAndApplication(hmap.get("Browser"));
 		
-		if(browserName.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
-		}else if(browserName.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		}else if(browserName.equalsIgnoreCase("edge")) {
-			driver = new EdgeDriver();
-		}else if(browserName.equalsIgnoreCase("safari")) {
-			driver = new SafariDriver();
-		}else if(browserName.equalsIgnoreCase("ie")) {
-			driver = new InternetExplorerDriver();
-		}
-		
-		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-		driver.get("https://tutorialsninja.com/demo/");
 		WebElement searchBoxField = driver.findElement(By.name("search"));
 		searchBoxField.sendKeys(hmap.get("SearchText"));
 		WebElement searchButton = driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']"));
@@ -79,7 +65,9 @@ public class Search {
 	@DataProvider(name="searchDataProvider")
 	public Object[][] supplySearchData() {
 		
-		String excelFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\TutorialsNinja.xlsx";
+		loadPropertiesFile();
+		
+		String excelFilePath = System.getProperty("user.dir")+prop.getProperty("excelfilepath");
 		
 		try {
 			excelReader = new MyXLSReader(excelFilePath);

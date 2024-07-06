@@ -1,13 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-30T19:03:51 IST" name="Default suite" finished-at="2024-06-30T19:04:41 IST" duration-ms="50225">
+  <suite started-at="2024-07-06T19:11:54 IST" name="Suite" finished-at="2024-07-06T19:15:03 IST" duration-ms="188687">
     <groups>
     </groups>
-    <test started-at="2024-06-30T19:03:51 IST" name="Default test" finished-at="2024-06-30T19:04:41 IST" duration-ms="50225">
+    <test started-at="2024-07-06T19:11:54 IST" name="Test" finished-at="2024-07-06T19:15:03 IST" duration-ms="188687">
+      <class name="tests.Login">
+        <test-method signature="verifyLoginFunctionality(java.util.HashMap)[pri:0, instance:tests.Login@7586beff]" started-at="2024-07-06T19:13:28 IST" name="verifyLoginFunctionality" data-provider="dataSupplierOne" finished-at="2024-07-06T19:13:39 IST" duration-ms="11295" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@7586beff]" started-at="2024-07-06T19:13:39 IST" name="tearDown" finished-at="2024-07-06T19:13:40 IST" duration-ms="551" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyLoginFunctionality(java.util.HashMap)[pri:0, instance:tests.Login@7586beff]" started-at="2024-07-06T19:13:40 IST" name="verifyLoginFunctionality" data-provider="dataSupplierOne" finished-at="2024-07-06T19:14:02 IST" duration-ms="21697" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@7586beff]" started-at="2024-07-06T19:14:02 IST" name="tearDown" finished-at="2024-07-06T19:14:04 IST" duration-ms="2441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyLoginFunctionality(java.util.HashMap)[pri:0, instance:tests.Login@7586beff]" started-at="2024-07-06T19:14:04 IST" name="verifyLoginFunctionality" data-provider="dataSupplierOne" finished-at="2024-07-06T19:14:17 IST" duration-ms="12578" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@7586beff]" started-at="2024-07-06T19:14:17 IST" name="tearDown" finished-at="2024-07-06T19:14:18 IST" duration-ms="1727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Login -->
       <class name="tests.Search">
-        <test-method signature="verifySearchFunctionality(java.util.HashMap)[pri:0, instance:tests.Search@7b2bbc3]" started-at="2024-06-30T19:03:53 IST" name="verifySearchFunctionality" data-provider="searchDataProvider" finished-at="2024-06-30T19:04:17 IST" duration-ms="23863" status="PASS">
+        <test-method signature="verifySearchFunctionality(java.util.HashMap)[pri:0, instance:tests.Search@3b69e7d1]" started-at="2024-07-06T19:14:18 IST" name="verifySearchFunctionality" data-provider="searchDataProvider" finished-at="2024-07-06T19:14:37 IST" duration-ms="18535" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +65,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Search@7b2bbc3]" started-at="2024-06-30T19:04:17 IST" name="tearDown" finished-at="2024-06-30T19:04:21 IST" duration-ms="4216" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Search@3b69e7d1]" started-at="2024-07-06T19:14:37 IST" name="tearDown" finished-at="2024-07-06T19:14:40 IST" duration-ms="3134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="verifySearchFunctionality(java.util.HashMap)[pri:0, instance:tests.Search@7b2bbc3]" started-at="2024-06-30T19:04:21 IST" name="verifySearchFunctionality" data-provider="searchDataProvider" finished-at="2024-06-30T19:04:30 IST" duration-ms="8888" status="PASS">
+        <test-method signature="verifySearchFunctionality(java.util.HashMap)[pri:0, instance:tests.Search@3b69e7d1]" started-at="2024-07-06T19:14:40 IST" name="verifySearchFunctionality" data-provider="searchDataProvider" finished-at="2024-07-06T19:14:49 IST" duration-ms="8507" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -33,11 +80,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Search@7b2bbc3]" started-at="2024-06-30T19:04:30 IST" name="tearDown" finished-at="2024-06-30T19:04:30 IST" duration-ms="519" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Search@3b69e7d1]" started-at="2024-07-06T19:14:49 IST" name="tearDown" finished-at="2024-07-06T19:14:49 IST" duration-ms="664" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="verifySearchFunctionality(java.util.HashMap)[pri:0, instance:tests.Search@7b2bbc3]" started-at="2024-06-30T19:04:30 IST" name="verifySearchFunctionality" data-provider="searchDataProvider" finished-at="2024-06-30T19:04:39 IST" duration-ms="8821" status="PASS">
+        <test-method signature="verifySearchFunctionality(java.util.HashMap)[pri:0, instance:tests.Search@3b69e7d1]" started-at="2024-07-06T19:14:49 IST" name="verifySearchFunctionality" data-provider="searchDataProvider" finished-at="2024-07-06T19:15:01 IST" duration-ms="11465" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,11 +95,73 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Search@7b2bbc3]" started-at="2024-06-30T19:04:39 IST" name="tearDown" finished-at="2024-06-30T19:04:41 IST" duration-ms="1790" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Search@3b69e7d1]" started-at="2024-07-06T19:15:01 IST" name="tearDown" finished-at="2024-07-06T19:15:03 IST" duration-ms="1874" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.Search -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="tests.Register">
+        <test-method signature="verifyRegisterFunctionality(java.util.HashMap)[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:11:58 IST" name="verifyRegisterFunctionality" data-provider="registerDataProvider" finished-at="2024-07-06T19:12:25 IST" duration-ms="27798" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=autogenerate, ExpectedResult=Success, Telephone=1.23456789E9, FirstName=Kishore, PasswordConfirm=abcde, Runmode=Y, LastName=Ravi, Browser=Firefox, Password=abcde}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisterFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:12:25 IST" name="tearDown" finished-at="2024-07-06T19:12:28 IST" duration-ms="3064" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyRegisterFunctionality(java.util.HashMap)[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:12:28 IST" name="verifyRegisterFunctionality" data-provider="registerDataProvider" finished-at="2024-07-06T19:12:45 IST" duration-ms="16310" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConfirm=efghi, Runmode=Y, LastName=Pichai, Browser=Chrome, Password=efghi}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisterFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:12:45 IST" name="tearDown" finished-at="2024-07-06T19:12:45 IST" duration-ms="531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyRegisterFunctionality(java.util.HashMap)[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:12:45 IST" name="verifyRegisterFunctionality" data-provider="registerDataProvider" finished-at="2024-07-06T19:13:07 IST" duration-ms="21676" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=autogenerate, ExpectedResult=Success, Telephone=1.234567892E9, FirstName=Microsoft, PasswordConfirm=jklmn, Runmode=Y, LastName=Nadella, Browser=Firefox, Password=jklmn}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisterFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:13:07 IST" name="tearDown" finished-at="2024-07-06T19:13:10 IST" duration-ms="2641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyRegisterFunctionality(java.util.HashMap)[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:13:10 IST" name="verifyRegisterFunctionality" data-provider="registerDataProvider" finished-at="2024-07-06T19:13:26 IST" duration-ms="16425" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=autogenerate, ExpectedResult=Success, Telephone=1.234567893E9, FirstName=Facebook, PasswordConfirm=opqrs, Runmode=Y, LastName=Zukerburg, Browser=Edge, Password=opqrs}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisterFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Register@3270d194]" started-at="2024-07-06T19:13:26 IST" name="tearDown" finished-at="2024-07-06T19:13:28 IST" duration-ms="1814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Register -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
