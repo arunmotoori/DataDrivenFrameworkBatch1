@@ -1,26 +1,18 @@
 package tests;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.util.Date;
 import java.util.HashMap;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pageobjects.HomePage;
+import pageobjects.RegisterPage;
 import util.DataUtil;
 import util.MyXLSReader;
 
@@ -28,6 +20,8 @@ public class Register extends Base {
 	
 	WebDriver driver;
 	MyXLSReader myXLSReader = null;
+	HomePage homePage;
+	RegisterPage registerPage;
 	
 	@AfterMethod
 	public void tearDown() {
@@ -48,28 +42,18 @@ public class Register extends Base {
 	
 		driver = openBrowserAndApplication(hmap.get("Browser"));
 		
-		WebElement myAccountDropMenu = driver.findElement(By.xpath("//span[text()='My Account']"));
-		myAccountDropMenu.click();
-		WebElement registerOption = driver.findElement(By.linkText("Register"));
-		registerOption.click();
-		WebElement firstNameField = driver.findElement(By.id("input-firstname"));
-		firstNameField.sendKeys(hmap.get("FirstName"));
-		WebElement lastNameField = driver.findElement(By.id("input-lastname"));
-		lastNameField.sendKeys(hmap.get("LastName"));
-		WebElement emailField = driver.findElement(By.id("input-email"));
-		emailField.sendKeys(generateEmailWithTimeStamp());
-		WebElement telephoneField = driver.findElement(By.id("input-telephone"));
-		telephoneField.sendKeys(hmap.get("Telephone"));
-		WebElement passwordField = driver.findElement(By.id("input-password"));
-		passwordField.sendKeys(hmap.get("Password"));
-		WebElement passwordConfirmField = driver.findElement(By.id("input-confirm"));
-		passwordConfirmField.sendKeys(hmap.get("PasswordConfirm"));
-		WebElement yesNewsletterOption = driver.findElement(By.xpath("//input[@name='newsletter'][@value='1']"));
-		yesNewsletterOption.click();
-		WebElement privacyPolicyOption = driver.findElement(By.name("agree"));
-		privacyPolicyOption.click();
-		WebElement contineButton = driver.findElement(By.xpath("//input[@value='Continue']"));
-		contineButton.click();
+		homePage = new HomePage(driver);
+		homePage.clickOnMyAccountDropMenu();
+		registerPage = homePage.selectRegisterOption();
+		registerPage.enterFirstName(hmap.get("FirstName"));
+		registerPage.enterLastName(hmap.get("LastName"));
+		registerPage.enterEmailAddress(generateEmailWithTimeStamp());
+		registerPage.enterTelephoneNumber(hmap.get("Telephone"));
+		registerPage.enterPassword(hmap.get("Password"));
+		registerPage.enterConfirmationPassword(hmap.get("PasswordConfirm"));
+		registerPage.optForNewsletter();
+		registerPage.selectPrivacyPolicy();
+		registerPage.clickOnContinueButton();
 		
 		String expectedResult = hmap.get("ExpectedResult");
 		
@@ -81,7 +65,6 @@ public class Register extends Base {
 			Assert.assertEquals(driver.getTitle(),"Register Account");
 		}
 		
-
 	}
 	
 	@DataProvider(name="registerDataProvider")

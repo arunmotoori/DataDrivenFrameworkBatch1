@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="listeners.MyListeners"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.Search">
-        <methods>
-          <include name="verifySearchFunctionality"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- tests.Search -->
       <class name="tests.Register">
         <methods>
-          <include name="verifyRegisterFunctionality"/>
+          <include name="verifyRegisterFunctionality" invocation-numbers="1"/>
           <include name="tearDown"/>
-          <include name="setup"/>
         </methods>
       </class> <!-- tests.Register -->
       <class name="tests.Login">
         <methods>
-          <include name="verifyLoginFunctionality"/>
+          <include name="verifyLoginFunctionality" invocation-numbers="2"/>
           <include name="tearDown"/>
-          <include name="setup"/>
         </methods>
       </class> <!-- tests.Login -->
     </classes>

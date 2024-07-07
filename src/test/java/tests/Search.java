@@ -1,25 +1,19 @@
 package tests;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pageobjects.HomePage;
+import pageobjects.SearchResultsPage;
 import util.DataUtil;
 import util.MyXLSReader;
 
@@ -27,6 +21,8 @@ public class Search extends Base {
 	
 	WebDriver driver;
 	MyXLSReader excelReader = null;
+	HomePage homePage;
+	SearchResultsPage searchResultsPage;
 	
 	@AfterMethod
 	public void tearDown() {
@@ -45,19 +41,18 @@ public class Search extends Base {
 		
 		driver = openBrowserAndApplication(hmap.get("Browser"));
 		
-		WebElement searchBoxField = driver.findElement(By.name("search"));
-		searchBoxField.sendKeys(hmap.get("SearchText"));
-		WebElement searchButton = driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']"));
-		searchButton.click();
-		
+		homePage = new HomePage(driver);
+		homePage.enterSearchText(hmap.get("SearchText"));
+		searchResultsPage = homePage.clickOnSearchButton();
+	
 		if(hmap.get("ExpectedResult").equals("Success")) {
 	
 		   String expectedProduct = hmap.get("ExpectedProduct");
-		   Assert.assertEquals(driver.findElement(By.xpath("//h4/a")).getText(), expectedProduct);
+		   Assert.assertEquals(searchResultsPage.getResultedProductName(), expectedProduct);
 			
 		}else if(hmap.get("ExpectedResult").equals("Failure")){
 			String expectedProduct = hmap.get("ExpectedProduct");
-			Assert.assertEquals(driver.findElement(By.xpath("//h2/following-sibling::p")).getText(), expectedProduct);
+			Assert.assertEquals(searchResultsPage.getResultedMessage(), expectedProduct);
 		}
 	
 	}

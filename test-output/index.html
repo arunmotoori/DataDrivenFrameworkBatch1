@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,35 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">10 methods, 1 failed,  1 skipped,  8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})">verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Register" class="method navigator-link" hash-for-method="verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)">verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,11 +129,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})">verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})">verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})</a> <!-- method navigator-link -->
@@ -123,11 +146,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Register" class="method navigator-link" hash-for-method="verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)">verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="tests.Register" class="method navigator-link" hash-for-method="verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567892E9, FirstName=Microsoft, PasswordC...)">verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567892E9, FirstName=Microsoft, PasswordC...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -138,17 +156,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})">verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -163,34 +181,68 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.Search</span>
+              <img src="failed.png"/>
+              <span class="class-name">tests.Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})">
-                  </a> <!-- verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox}) -->
-                  <span class="method-name">verifySearchFunctionality</span>
-                  <span class="parameters">({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})</span>
+                  <a name="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})">
+                  </a> <!-- verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn}) -->
+                  <span class="method-name">verifyLoginFunctionality</span>
+                  <span class="parameters">({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
+	at tests.Login.verifyLoginFunctionality(Login.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.Register</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)">
+                  </a> <!-- verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...) -->
+                  <span class="method-name">verifyRegisterFunctionality</span>
+                  <span class="parameters">({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConfirm=efghi, Runmode=N, LastName=Pichai, Browser=Chrome, Password=efghi})</span>
+                  <div class="stack-trace">org.testng.SkipException: Run mode is set N, hence test got skipped
+	at tests.Register.verifyRegisterFunctionality(Register.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})">
+                  </a> <!-- verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde}) -->
+                  <span class="method-name">verifyLoginFunctionality</span>
+                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">
-                  </a> <!-- verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...) -->
-                  <span class="method-name">verifySearchFunctionality</span>
-                  <span class="parameters">({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Failure, SearchText=Honda, Browser=Chrome})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">
-                  </a> <!-- verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...) -->
-                  <span class="method-name">verifySearchFunctionality</span>
-                  <span class="parameters">({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Failure, SearchText=Wipro, Browser=Edge})</span>
+                  <a name="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab})">
+                  </a> <!-- verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab}) -->
+                  <span class="method-name">verifyLoginFunctionality</span>
+                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -207,14 +259,6 @@
                   </a> <!-- verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.23456789E9, FirstName=Kishore, PasswordConf...) -->
                   <span class="method-name">verifyRegisterFunctionality</span>
                   <span class="parameters">({Email=autogenerate, ExpectedResult=Success, Telephone=1.23456789E9, FirstName=Kishore, PasswordConfirm=abcde, Runmode=Y, LastName=Ravi, Browser=Firefox, Password=abcde})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)">
-                  </a> <!-- verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...) -->
-                  <span class="method-name">verifyRegisterFunctionality</span>
-                  <span class="parameters">({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConfirm=efghi, Runmode=Y, LastName=Pichai, Browser=Chrome, Password=efghi})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -238,31 +282,31 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.Login</span>
+              <span class="class-name">tests.Search</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})">
-                  </a> <!-- verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn}) -->
-                  <span class="method-name">verifyLoginFunctionality</span>
-                  <span class="parameters">({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})</span>
+                  <a name="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">
+                  </a> <!-- verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...) -->
+                  <span class="method-name">verifySearchFunctionality</span>
+                  <span class="parameters">({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Failure, SearchText=Wipro, Browser=Edge})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})">
-                  </a> <!-- verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde}) -->
-                  <span class="method-name">verifyLoginFunctionality</span>
-                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})</span>
+                  <a name="verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)">
+                  </a> <!-- verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...) -->
+                  <span class="method-name">verifySearchFunctionality</span>
+                  <span class="parameters">({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Failure, SearchText=Honda, Browser=Chrome})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab})">
-                  </a> <!-- verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab}) -->
-                  <span class="method-name">verifyLoginFunctionality</span>
-                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab})</span>
+                  <a name="verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})">
+                  </a> <!-- verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox}) -->
+                  <span class="method-name">verifySearchFunctionality</span>
+                  <span class="parameters">({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -277,6 +321,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;listeners.MyListeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.Register&quot;/&gt;
@@ -325,43 +372,43 @@ data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyRegisterFunctionality')
 data.setCell(0, 2, 'tests.Register')
-data.setCell(0, 3, 27798);
+data.setCell(0, 3, 26178);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyLoginFunctionality')
-data.setCell(1, 2, 'tests.Login')
-data.setCell(1, 3, 21697);
+data.setCell(1, 1, 'verifyRegisterFunctionality')
+data.setCell(1, 2, 'tests.Register')
+data.setCell(1, 3, 19039);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyRegisterFunctionality')
-data.setCell(2, 2, 'tests.Register')
-data.setCell(2, 3, 21676);
+data.setCell(2, 1, 'verifyLoginFunctionality')
+data.setCell(2, 2, 'tests.Login')
+data.setCell(2, 3, 18934);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'verifySearchFunctionality')
 data.setCell(3, 2, 'tests.Search')
-data.setCell(3, 3, 18535);
+data.setCell(3, 3, 18014);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'verifyRegisterFunctionality')
 data.setCell(4, 2, 'tests.Register')
-data.setCell(4, 3, 16425);
+data.setCell(4, 3, 14486);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyRegisterFunctionality')
-data.setCell(5, 2, 'tests.Register')
-data.setCell(5, 3, 16310);
+data.setCell(5, 1, 'verifyLoginFunctionality')
+data.setCell(5, 2, 'tests.Login')
+data.setCell(5, 3, 10207);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'verifyLoginFunctionality')
 data.setCell(6, 2, 'tests.Login')
-data.setCell(6, 3, 12578);
+data.setCell(6, 3, 9898);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'verifySearchFunctionality')
 data.setCell(7, 2, 'tests.Search')
-data.setCell(7, 3, 11465);
+data.setCell(7, 3, 8957);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifyLoginFunctionality')
-data.setCell(8, 2, 'tests.Login')
-data.setCell(8, 3, 11295);
+data.setCell(8, 1, 'verifySearchFunctionality')
+data.setCell(8, 2, 'tests.Search')
+data.setCell(8, 3, 7684);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'verifySearchFunctionality')
-data.setCell(9, 2, 'tests.Search')
-data.setCell(9, 3, 8507);
+data.setCell(9, 1, 'verifyRegisterFunctionality')
+data.setCell(9, 2, 'tests.Register')
+data.setCell(9, 3, 8);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -399,85 +446,87 @@ return data;
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">27820 ms</span>
+                <span class="method-start">26195 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567891E9, FirstName=Google, PasswordConf...)</span>
-                <span class="method-start">30893 ms</span>
+                <span class="method-start">28776 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">47214 ms</span>
+                <span class="method-start">28790 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567892E9, FirstName=Microsoft, PasswordC...)</span>
-                <span class="method-start">47746 ms</span>
+                <span class="method-start">28791 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">69432 ms</span>
+                <span class="method-start">47838 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterFunctionality({Email=autogenerate, ExpectedResult=Success, Telephone=1.234567893E9, FirstName=Facebook, PasswordCo...)</span>
-                <span class="method-start">72074 ms</span>
+                <span class="method-start">49996 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">88507 ms</span>
+                <span class="method-start">64489 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.Login</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch1@gmail.com, Browser=Chrome, Password=abcde})</span>
-                <span class="method-start">90438 ms</span>
+                <span class="method-start">66338 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">101737 ms</span>
+                <span class="method-start">76243 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifyLoginFunctionality({Runmode=Y, ExpectedResult=Success, Username=arunbatch2@gmail.com, Browser=Firefox, Password=xyzab})</span>
-                <span class="method-start">102289 ms</span>
+                <span class="method-start">76835 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">123991 ms</span>
+                <span class="method-start">95772 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifyLoginFunctionality({Runmode=Y, ExpectedResult=Failure, Username=arunbatch3@gmail.com, Browser=Edge, Password=abcmn})</span>
-                <span class="method-start">126433 ms</span>
+                <span class="method-start">97834 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">139015 ms</span>
+                <span class="method-start">108071 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.Search</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifySearchFunctionality({ExpectedProduct=HP LP3065, Runmode=Y, ExpectedResult=Success, SearchText=HP, Browser=Firefox})</span>
-                <span class="method-start">140871 ms</span>
+                <span class="method-start">109961 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">159413 ms</span>
+                <span class="method-start">127980 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)</span>
-                <span class="method-start">162549 ms</span>
+                <span class="method-start">130119 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">171061 ms</span>
+                <span class="method-start">137808 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifySearchFunctionality({ExpectedProduct=There is no product that matches the search criteria., Runmode=Y, ExpectedResult=Fa...)</span>
-                <span class="method-start">171727 ms</span>
+                <span class="method-start">138285 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">183195 ms</span>
+                <span class="method-start">147252 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,25 +1,19 @@
 package tests;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.HashMap;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pageobjects.AccountPage;
+import pageobjects.HomePage;
+import pageobjects.LoginPage;
 import util.DataUtil;
 import util.MyXLSReader;
 
@@ -27,6 +21,9 @@ public class Login extends Base {
 	
 	WebDriver driver;
 	MyXLSReader myXLSReader = null;
+	HomePage homePage;
+	LoginPage loginPage;
+	AccountPage accountPage;
 	
 	@AfterMethod
 	public void tearDown() {
@@ -48,21 +45,17 @@ public class Login extends Base {
 		
 		driver = openBrowserAndApplication(hMap.get("Browser"));
 		
-		WebElement myAccountDropMenu = driver.findElement(By.xpath("//span[text()='My Account']"));
-		myAccountDropMenu.click();
-		WebElement loginOption = driver.findElement(By.linkText("Login"));
-		loginOption.click();
-		WebElement emailField = driver.findElement(By.id("input-email"));
-		emailField.sendKeys(hMap.get("Username"));
-		WebElement passwordField = driver.findElement(By.id("input-password"));
-		passwordField.sendKeys(hMap.get("Password"));
-		WebElement loginButton = driver.findElement(By.xpath("//input[@value='Login']"));
-		loginButton.click();
+		homePage = new HomePage(driver);
+		homePage.clickOnMyAccountDropMenu();
+		loginPage =homePage.selectLoginOption();
+		loginPage.enterEmailAddress(hMap.get("Username"));
+		loginPage.enterPassword(hMap.get("Password"));
+		accountPage = loginPage.clickOnLoginButton();
 		
 		if(hMap.get("ExpectedResult").equals("Success")) {
-			Assert.assertTrue(driver.findElement(By.linkText("Edit your account information")).isDisplayed());
+			Assert.assertTrue(accountPage.loginStatus());
 		}else if(hMap.get("ExpectedResult").equals("Failure")){
-			Assert.assertTrue(driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).isDisplayed());
+			Assert.assertFalse(loginPage.loginWarningDisplayStatus());
 		}
 	}
 	
