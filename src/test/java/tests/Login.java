@@ -19,11 +19,15 @@ import util.MyXLSReader;
 
 public class Login extends Base {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	MyXLSReader myXLSReader = null;
 	HomePage homePage;
 	LoginPage loginPage;
 	AccountPage accountPage;
+	
+	public Login() {
+		super();
+	}
 	
 	@AfterMethod
 	public void tearDown() {
@@ -65,8 +69,6 @@ public class Login extends Base {
 //		Object[][] data = {{"arunbatch1@gmail.com","abcde"},
 //				{"arunbatch2@gmail.com","xyzab"},
 //				{"arunbatch3@gmail.com","mnopq"}};
-		
-		loadPropertiesFile();
 		
 		String xlsxFilePath = System.getProperty("user.dir")+prop.getProperty("excelfilepath");
 		

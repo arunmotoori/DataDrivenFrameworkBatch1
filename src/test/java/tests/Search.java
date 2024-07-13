@@ -3,7 +3,6 @@ package tests;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
@@ -19,10 +18,14 @@ import util.MyXLSReader;
 
 public class Search extends Base {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	MyXLSReader excelReader = null;
 	HomePage homePage;
 	SearchResultsPage searchResultsPage;
+	
+	public Search() {
+		super();
+	}
 	
 	@AfterMethod
 	public void tearDown() {
@@ -60,7 +63,6 @@ public class Search extends Base {
 	@DataProvider(name="searchDataProvider")
 	public Object[][] supplySearchData() {
 		
-		loadPropertiesFile();
 		
 		String excelFilePath = System.getProperty("user.dir")+prop.getProperty("excelfilepath");
 		

@@ -6,18 +6,18 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.Register">
-        <methods>
-          <include name="verifyRegisterFunctionality" invocation-numbers="1"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- tests.Register -->
       <class name="tests.Login">
         <methods>
           <include name="verifyLoginFunctionality" invocation-numbers="2"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- tests.Login -->
+      <class name="tests.Register">
+        <methods>
+          <include name="verifyRegisterFunctionality" invocation-numbers="1"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.Register -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

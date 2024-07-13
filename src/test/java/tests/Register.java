@@ -18,10 +18,14 @@ import util.MyXLSReader;
 
 public class Register extends Base {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	MyXLSReader myXLSReader = null;
 	HomePage homePage;
 	RegisterPage registerPage;
+	
+	public Register() {
+		super();
+	}
 	
 	@AfterMethod
 	public void tearDown() {
@@ -70,7 +74,7 @@ public class Register extends Base {
 	@DataProvider(name="registerDataProvider")
 	public Object[][] registerDataSupplierMethod() {
 		
-		loadPropertiesFile();
+		
 		String excelPath = System.getProperty("user.dir")+prop.getProperty("excelfilepath");
 		
 		try {

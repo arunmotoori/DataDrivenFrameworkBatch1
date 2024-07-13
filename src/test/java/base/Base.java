@@ -20,7 +20,7 @@ public class Base {
 	WebDriver driver;
 	public Properties prop;
 	
-	public void loadPropertiesFile() {
+	public Base() {
 		try {
 			prop = new Properties();
 			File propFile = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\projectdata.properties");
