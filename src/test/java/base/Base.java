@@ -1,9 +1,5 @@
 package base;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
@@ -15,22 +11,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import util.Utilities;
+
 public class Base {
 	
 	WebDriver driver;
 	public Properties prop;
 	
 	public Base() {
-		try {
-			prop = new Properties();
-			File propFile = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\projectdata.properties");
-			FileReader fr = new FileReader(propFile);
-			prop.load(fr);
-		}catch(FileNotFoundException e) {
-			e.printStackTrace();
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
+		prop = Utilities.loadPropertiesFile();
 	}
 	
 	public WebDriver openBrowserAndApplication(String browserName) {

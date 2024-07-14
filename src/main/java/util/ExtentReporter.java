@@ -1,5 +1,11 @@
 package util;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
@@ -8,8 +14,8 @@ public class ExtentReporter {
 	public static ExtentReports getExtentReport() {
 		
 		ExtentReports extentReport = new ExtentReports();
-		
-		String extentReportFilePath = System.getProperty("user.dir")+"\\reports\\ExtentReportOne.html";
+		Properties prop = Utilities.loadPropertiesFile();
+		String extentReportFilePath = System.getProperty("user.dir")+prop.getProperty("extentreportpath");
 		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extentReportFilePath);
 		sparkReporter.config().setReportName("DDF - Extent Report Demo Name");
 		sparkReporter.config().setDocumentTitle("DDF - Extent Report Demo Title");
